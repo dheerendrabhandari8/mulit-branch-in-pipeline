@@ -55,11 +55,11 @@ pipeline {
     
      }
         
-    }
+    // }
     //   post {
     //     success {
     //         // Trigger the second job (Pipeline 2) when the first job is successful
     //         build job: 'second_job', propagate: false
     //     }
     // }
-    }
+    // }
