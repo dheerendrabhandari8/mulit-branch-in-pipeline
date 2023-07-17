@@ -5,7 +5,7 @@ pipeline {
       Production_IP = '3.14.68.46'
       SSH_cred_staging = 'multi-branch'
       SSH_cred_production = 'ssh-agent' 
-      github_url = 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
+      Github_url = 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
   }
     stages {
         stage('Hello') {
