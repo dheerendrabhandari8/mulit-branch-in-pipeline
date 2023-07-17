@@ -26,16 +26,16 @@ pipeline {
             }
      }
   
-        stage('Hello2') {
+        // stage('Hello2') {
             
             
             
-            steps {
+        //     steps {
                 
-            git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'  
-            }
-        }
- stage('dep') {
+        //     git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'  
+        //     }
+        // }
+ stage('deb') {
             steps {
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['ssh-agent']) {
