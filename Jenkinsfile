@@ -10,7 +10,7 @@ pipeline {
             steps {
                 env.BRANCH_NAME = 'staging'
                 sshagent(['new-test']) {
-                    sh 'ssh -o StrictHostKeyChecking=no root@3.108.250.193 "cd /var/www/html && git reset --hard origin/${env.BRANCH_NAME} && git pull"'
+                    sh 'ssh -o StrictHostKeyChecking=no root@3.108.250.193 
                     sh 'scp -r /var/lib/jenkins/workspace/multiple-branch-insingle-pipeline/* root@3.108.250.193:/var/www/html/'
                 }
             }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 env.BRANCH_NAME = 'production'
                 sshagent(['new-test']) {
-                    sh 'ssh -o StrictHostKeyChecking=no root@3.108.250.193 "cd /var/www/html && git reset --hard origin/${env.BRANCH_NAME} && git pull"'
+                    sh 'ssh -o StrictHostKeyChecking=no root@3.108.250.193 
                     sh 'scp -r /var/lib/jenkins/workspace/multiple-branch-insingle-pipeline/* root@3.108.250.193:/var/www/html/'
                 }
             }
