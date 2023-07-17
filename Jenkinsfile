@@ -8,7 +8,7 @@ pipeline {
             steps {
             
                  input 'Do yo want to deploy on staging environment ?'
-              sshagent(['ssh-agent']) {
+              sshagent(['multi-branch']) {
 
                 sh 'ssh -o StrictHostKeyChecking=no root@13.145.64.16' 
      sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@3.145.64.16:/var/www/html' 
