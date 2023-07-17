@@ -2,17 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        // stage('Hello') {
             
             
             
-            steps {
+        //     steps {
                 
-            git branch: 'staging', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
-            }
-        }
+        //     git branch: 'staging', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
+        //     }
+        // }
    
      stage('deploy') {
+          environment {
+                BRANCH_NAME = 'staging'
+            }
             steps {
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['muli-branch']) {
