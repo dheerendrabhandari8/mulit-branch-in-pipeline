@@ -14,7 +14,7 @@ pipeline {
             
             steps {
                 
-            git branch: 'staging', credentialsId: 'git_hub', url: '${Github_url}'
+            git branch: 'staging', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
             }
         }
    
@@ -36,7 +36,7 @@ pipeline {
             
             steps {
                 
-            git branch: 'production', credentialsId: 'git_hub', url: '${Github_url}'  
+            git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
             }
         }
  stage('deb') {
