@@ -10,8 +10,8 @@ pipeline {
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['ssh-agent']) {
 
-                sh 'ssh -o StrictHostKeyChecking=no root@18.188.202.173' 
-     sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@18.188.202.173:/var/www/html' 
+                sh 'ssh -o StrictHostKeyChecking=no root@13.145.64.16' 
+     sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@3.145.64.16:/var/www/html' 
               }
             }
  
