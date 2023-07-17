@@ -11,7 +11,7 @@ pipeline {
               sshagent(['ssh-agent']) {
 
                 sh 'ssh -o StrictHostKeyChecking=no root@18.188.202.173' 
-     sh ' scp -r /var/lib/jenkins/workspace/php_ssh/*  root@18.188.202.173:/var/www/html' 
+     sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@18.188.202.173:/var/www/html' 
               }
             }
  
