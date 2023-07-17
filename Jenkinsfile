@@ -1,11 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Approval for deployment on prod ') {
-            steps {
-                input 'Do you want to deploy on production ??'
-            }
-        }
+       
         stage('Deploy On Staging Environment') {
             steps {
                 env.BRANCH_NAME = 'staging'
