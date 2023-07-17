@@ -4,7 +4,8 @@ pipeline {
       Staging_IP = '3.145.64.16'
       Production_IP = '3.14.68.46'
       SSH_cred_staging = 'multi-branch'
-       SSH_cred_production = 'ssh-agent'           
+      SSH_cred_production = 'ssh-agent' 
+      github_url = 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
   }
     stages {
         stage('Hello') {
@@ -13,7 +14,7 @@ pipeline {
             
             steps {
                 
-            git branch: 'staging', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
+            git branch: 'staging', credentialsId: 'git_hub', url: ${github_url}
             }
         }
    
@@ -35,7 +36,7 @@ pipeline {
             
             steps {
                 
-            git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'  
+            git branch: 'production', credentialsId: 'git_hub', url: ${github_url}  
             }
         }
  stage('deb') {
