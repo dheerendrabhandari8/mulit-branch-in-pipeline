@@ -23,8 +23,8 @@ pipeline {
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['muli-branch']) {
 
-                sh 'ssh -o StrictHostKeyChecking=no root@Staging_IP' 
-     sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@Staging_IP:/var/www/html' 
+                sh 'ssh -o StrictHostKeyChecking=no root@${Staging_IP}' 
+     sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@${Staging_IP}:/var/www/html' 
               }
             }
      }
@@ -43,8 +43,8 @@ pipeline {
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['ssh-agent']) {
 
-                sh 'ssh -o StrictHostKeyChecking=no root@Production_IP' 
-     sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@Production_IP:/var/www/html' 
+                sh 'ssh -o StrictHostKeyChecking=no root@${Production_IP}' 
+     sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@${Production_IP}:/var/www/html' 
               }
             }
  
