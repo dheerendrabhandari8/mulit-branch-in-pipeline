@@ -2,17 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        // stage('Hello') {
             
             
             
-            steps {
+        //     steps {
                 
-            git branch: 'staging', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
-            }
-        }
+        //     git branch: 'staging', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
+        //     }
+        // }
    
      stage('deploy') {
+          environment {
+                BRANCH_NAME = 'staging'
+            }
             steps {
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['muli-branch']) {
@@ -21,18 +24,21 @@ pipeline {
      sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@3.145.64.16:/var/www/html' 
               }
             }
-  stages {
-        stage('Hello2') {
+  // stages {
+  //       stage('Hello2') {
             
             
             
-            steps {
+  //           steps {
                 
-            git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'  
-            }
-        }
+  //           git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'  
+  //           }
+  //       }
  stage('dep') {
             steps {
+                 environment {
+                BRANCH_NAME = 'staging'
+            }
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['ssh-agent']) {
 
