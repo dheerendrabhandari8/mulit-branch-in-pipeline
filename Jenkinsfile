@@ -21,7 +21,8 @@ pipeline {
      sh ' scp -r /var/lib/jenkins/workspace/php_ssh/*  root@3.145.64.16:/var/www/html' 
               }
             }
-  stages {
+     }
+  
         stage('Hello2') {
             
             
