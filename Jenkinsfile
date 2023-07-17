@@ -4,6 +4,7 @@ pipeline {
         stage('Deploy On Staging Environment') {
             steps {
                 script {
+                      def deployToStaging = false
                      (env.BRANCH_NAME == 'staging') {
                         deployToStaging = input(message: 'Do you want to deploy on staging environment?', ok: 'Deploy staging')
                     
