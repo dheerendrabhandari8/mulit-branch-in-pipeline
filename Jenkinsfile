@@ -18,7 +18,7 @@ pipeline {
               sshagent(['muli-branch']) {
 
                 sh 'ssh -o StrictHostKeyChecking=no root@3.145.64.16' 
-     sh ' scp -r /var/lib/jenkins/workspace/php_ssh/*  root@3.145.64.16:/var/www/html' 
+     sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@3.145.64.16:/var/www/html' 
               }
             }
      }
