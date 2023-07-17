@@ -8,7 +8,7 @@ pipeline {
             
             steps {
                 
-            git branch: 'staging', credentialsId: 'git_hub', '  
+            git branch: 'staging', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
             }
         }
    
@@ -28,7 +28,7 @@ pipeline {
             
             steps {
                 
-            git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/jenkins-cicd-php-demo.git'  
+            git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'  
             }
         }
  stage('dep') {
