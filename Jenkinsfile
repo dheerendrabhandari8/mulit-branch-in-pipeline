@@ -1,37 +1,37 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Hello') {
+    // stages {
+    //     stage('Hello') {
             
             
             
-            steps {
+    //         steps {
                 
-            git branch: 'staging', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
-            }
-        }
+    //         git branch: 'staging', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
+    //         }
+    //     }
    
-     stage('deploy') {
-            steps {
-                 input 'Do yo want to deploy on staging environment ?'
-              sshagent(['muli-branch']) {
+     // stage('deploy') {
+     //        steps {
+     //             input 'Do yo want to deploy on staging environment ?'
+     //          sshagent(['muli-branch']) {
 
-                sh 'ssh -o StrictHostKeyChecking=no root@3.145.64.16' 
-     sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@3.145.64.16:/var/www/html' 
-              }
-            }
-     }
+     //            sh 'ssh -o StrictHostKeyChecking=no root@3.145.64.16' 
+     // sh ' scp -r /var/lib/jenkins/workspace/new-mb/*  root@3.145.64.16:/var/www/html' 
+     //          }
+     //        }
+     // }
   
-        stage('Hello2') {
+        // stage('Hello2') {
             
             
             
-            steps {
+        //     steps {
                 
-            git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'  
-            }
-        }
+        //     git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'  
+        //     }
+        // }
  stage('dep') {
             steps {
                  input 'Do yo want to deploy on staging environment ?'
