@@ -2,10 +2,11 @@ pipeline {
     agent any
     stages {
         stage('deploy') {
-            steps {
                   environment {
                 BRANCH_NAME = 'staging'
             }
+            steps {
+            
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['ssh-agent']) {
 
