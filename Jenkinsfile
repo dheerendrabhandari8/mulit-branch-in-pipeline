@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Deploy On Staging Environment') {
             steps {
-                  input(message: 'Do you want to deploy on staging environment?', ok: 'Deploy staging')
+                    input 'Do you want to deploy on production ??'
                 script {
                   
                      (env.BRANCH_NAME == 'staging') {
