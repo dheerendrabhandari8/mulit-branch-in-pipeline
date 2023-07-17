@@ -16,14 +16,14 @@ pipeline {
             }
         }
 
-        stage('Deploy On Production Environment') {
-            steps {
-                env.BRANCH_NAME = 'production'
-                sshagent(['new-test']) {
-                    sh 'ssh -o StrictHostKeyChecking=no root@3.108.250.193 
-                    sh 'scp -r /var/lib/jenkins/workspace/multiple-branch-insingle-pipeline/* root@3.108.250.193:/var/www/html/'
-                }
-            }
-        }
+        // stage('Deploy On Production Environment') {
+        //     steps {
+        //         env.BRANCH_NAME = 'production'
+        //         sshagent(['new-test']) {
+        //             sh 'ssh -o StrictHostKeyChecking=no root@3.108.250.193 
+        //             sh 'scp -r /var/lib/jenkins/workspace/multiple-branch-insingle-pipeline/* root@3.108.250.193:/var/www/html/'
+        //         }
+        //     }
+        // }
     }
 }
