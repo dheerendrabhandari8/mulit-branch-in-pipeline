@@ -5,10 +5,10 @@ pipeline {
       Production_IP = '3.14.68.46'
       SSH_cred_staging = 'multi-branch'
       SSH_cred_production = 'ssh-agent' 
-      Github_url = 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
+    
   }
     stages {
-        stage('Hello') {
+        stage('checkout from staging branch') {
             
             
             
@@ -18,7 +18,7 @@ pipeline {
             }
         }
    
-     stage('deploy') {
+     stage('deploy in staging') {
         
             steps {
                  input 'Do yo want to deploy on staging environment ?'
@@ -30,7 +30,7 @@ pipeline {
             }
      }
   
-        stage('Hello2') {
+        stage('checkout from production branch') {
             
             
             
@@ -39,7 +39,7 @@ pipeline {
             git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
             }
         }
- stage('deb') {
+ stage('deploy in production') {
             steps {
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['${SSH_cred_production}']) {
