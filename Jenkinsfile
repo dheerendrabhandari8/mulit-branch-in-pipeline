@@ -31,15 +31,15 @@ pipeline {
             }
      }
   
-        stage('checkout from production branch') {
+        // stage('checkout from production branch') {
             
             
             
-            steps {
+        //     steps {
                 
-            git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
-            }
-        }
+        //     git branch: 'production', credentialsId: 'git_hub', url: 'https://github.com/dheerendrabhandari8/mulit-branch-in-pipeline.git'
+        //     }
+        // }
  stage('deploy in production') {
             steps {
                  sh 'git checkout production' 
