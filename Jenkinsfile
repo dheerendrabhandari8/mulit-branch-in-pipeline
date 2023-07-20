@@ -1,7 +1,7 @@
 pipeline {
     agent any
   environment {
-      Staging_IP = '3.145.64.16'
+      Staging_IP = '3.15.166.242'
       Production_IP = '3.14.68.46'
       SSH_cred_staging = 'multi-branch'
       SSH_cred_production = 'ssh-agent' 
