@@ -21,6 +21,7 @@ pipeline {
      stage('deploy in staging') {
         
             steps {
+                sh 'git checkout production'
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['${SSH_cred_staging}']) {
 
