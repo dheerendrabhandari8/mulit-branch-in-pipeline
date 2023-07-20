@@ -21,7 +21,7 @@ pipeline {
      stage('deploy in staging') {
         
             steps {
-                sh 'git checkout production'
+               
                  input 'Do yo want to deploy on staging environment ?'
               sshagent(['${SSH_cred_staging}']) {
 
@@ -42,7 +42,8 @@ pipeline {
         }
  stage('deploy in production') {
             steps {
-                 input 'Do yo want to deploy on staging environment ?'
+                 sh 'git checkout production' 
+                input 'Do yo want to deploy on staging environment ?'
               sshagent(['${SSH_cred_production}']) {
 
                 sh 'ssh -o StrictHostKeyChecking=no root@${Production_IP}' 
